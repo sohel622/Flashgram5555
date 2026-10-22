@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flashgram</title>
-    <!-- CSS লিঙ্ক -->
+    <!-- CSS ফাইলগুলোর লিংক -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
 </head>
 <body>
 
@@ -52,7 +53,7 @@
         <!-- ৪. সোশ্যাল মিডিয়া ফিড / পোস্টগুলো (Feed Section) -->
         <section class="feed-container">
 
-            <!-- একটা স্যাম্পল পোস্ট -->
+            <!-- স্যাম্পল পোস্ট -->
             <article class="post-card">
                 <div class="post-header">
                     <img src="https://via.placeholder.com/40" class="avatar" alt="User">
@@ -78,16 +79,27 @@
 
     </main>
 
-    <!-- ৫. বটম নেভিগেশন বার (মোবাইল অ্যাপ লুকের জন্য) -->
+    <!-- ৫. নতুন ইনস্টাগ্রাম স্টাইল বটম নেভিগেশন বার -->
     <nav class="bottom-nav">
-        <button class="nav-item active">🏠<span>হোম</span></button>
-        <button class="nav-item">🔍<span>সার্চ</span></button>
-        <button class="nav-item">➕<span>প্লাস</span></button>
-        <button class="nav-item">🎬<span>রিলস</span></button>
-        <button class="nav-item">👤<span>প্রোফাইল</span></button>
+        <button class="nav-item active" aria-label="Home">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.099l-10 8.66v11.241h7v-7h6v7h7v-11.241l-10-8.66z"/></svg>
+        </button>
+        <button class="nav-item" aria-label="Reels">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="m10 15 5-3-5-3v6z"/></svg>
+        </button>
+        <button class="nav-item" aria-label="Message">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </button>
+        <button class="nav-item" aria-label="Search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <button class="nav-item" aria-label="Profile">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </button>
     </nav>
 
-    <!-- JavaScript লিঙ্ক -->
+    <!-- JavaScript ফাইলগুলোর লিংক -->
     <script src="js/app.js"></script>
+    <script src="js/navigation.js"></script>
 </body>
 </html>
