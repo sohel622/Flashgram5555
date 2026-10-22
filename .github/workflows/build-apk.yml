@@ -19,6 +19,11 @@ jobs:
         with:
           node-version: 18
 
+      - name: Prepare Web Directory
+        run: |
+          mkdir www
+          cp -r index.html css home js assets www/ 2>/dev/null || cp -r index.html css home js www/
+
       - name: Install Dependencies
         run: |
           npm init -y
@@ -26,7 +31,7 @@ jobs:
 
       - name: Initialize Capacitor App
         run: |
-          npx cap init Flashgram com.sohail.flashgram --web-dir .
+          npx cap init Flashgram com.sohail.flashgram --web-dir www
 
       - name: Add Android Platform
         run: |
