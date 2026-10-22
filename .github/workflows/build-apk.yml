@@ -34,6 +34,12 @@ jobs:
           npx cap init Flashgram com.sohail.flashgram --web-dir www
           npx cap add android
 
+      - name: Inject Multi-Window Manifest
+        run: |
+          if [ -f "AndroidManifest.xml" ]; then
+            cp AndroidManifest.xml android/app/src/main/AndroidManifest.xml
+          fi
+
       - name: Setup Java JDK
         uses: actions/setup-java@v4
         with:
