@@ -1,38 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.sohail.flashgram">
-
-    <!-- ইন্টারনেট ও স্টোরেজ পারমিশন -->
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="Flashgram"
+        android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Flashgram">
-
+        android:theme="@style/AppTheme"
+        android:resizeableActivity="true">
         <activity
             android:name=".MainActivity"
-            android:exported="true"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|smallestScreenSize|screenLayout|uiMode"
-            
-            <!-- অত্যন্ত গুরুত্বপূর্ণ: এটি স্মল উইন্ডো, স্প্লিট স্ক্রিন এবং ফ্রি-ফর্ম মাল্টি-উইন্ডো সাপোর্ট করে -->
+            android:label="@string/title_activity_main"
+            android:launchMode="singleTask"
+            android:theme="@style/AppTheme.NoActionBar"
             android:resizeableActivity="true"
-            
             android:supportsPictureInPicture="true"
-            android:windowSoftInputMode="adjustResize">
-            
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
-
 </manifest>
