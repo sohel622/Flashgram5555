@@ -43,7 +43,7 @@ jobs:
       - name: Sync Capacitor Files
         run: npx cap sync android
 
-      - name: Force Inject Multi-Window Manifest
+      - name: Inject Multi-Window Manifest
         run: |
           if [ -f "AndroidManifest.xml" ]; then
             cp -f AndroidManifest.xml android/app/src/main/AndroidManifest.xml
