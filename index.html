@@ -1,105 +1,10 @@
-<!DOCTYPE html>
-<html lang="bn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flashgram</title>
-    <!-- CSS ফাইলগুলোর লিংক -->
+
+    <!-- CSS লিংকসমূহ -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="home/home.css">
 </head>
-<body>
-
-    <!-- ১. টপ হেডার / নেভিগেশন বার -->
-    <header class="top-nav">
-        <h1 class="logo">Flashgram</h1>
-        <div class="nav-icons">
-            <button class="icon-btn" aria-label="Notifications">🔔</button>
-            <button class="icon-btn" aria-label="Messages">💬</button>
-        </div>
-    </header>
-
-    <!-- মেইন কনটেন্ট এরিয়া -->
-    <main class="main-container">
-
-        <!-- ২. স্টোরি সেকশন (Stories) -->
-        <section class="stories-container">
-            <div class="story my-story">
-                <div class="add-story-btn">+</div>
-                <span>আপনার স্টোরি</span>
-            </div>
-            <div class="story">
-                <img src="https://via.placeholder.com/60" alt="User">
-                <span>User 1</span>
-            </div>
-            <div class="story">
-                <img src="https://via.placeholder.com/60" alt="User">
-                <span>User 2</span>
-            </div>
-        </section>
-
-        <!-- ৩. পোস্ট তৈরি করার সেকশন (Create Post) -->
-        <section class="create-post-card">
-            <div class="post-input-box">
-                <img src="https://via.placeholder.com/40" class="avatar" alt="Profile">
-                <input type="text" placeholder="আজকে আপনার মনে কী চলছে, Flashgram-এ শেয়ার করুন...">
-            </div>
-            <div class="post-actions">
-                <button class="action-btn">📷 ফটো / ভিডিও</button>
-                <button class="action-btn post-submit">পোস্ট করুন</button>
-            </div>
-        </section>
-
-        <!-- ৪. সোশ্যাল মিডিয়া ফিড / পোস্টগুলো (Feed Section) -->
-        <section class="feed-container">
-
-            <!-- স্যাম্পল পোস্ট -->
-            <article class="post-card">
-                <div class="post-header">
-                    <img src="https://via.placeholder.com/40" class="avatar" alt="User">
-                    <div class="user-info">
-                        <h3>Sohail Mandal</h3>
-                        <span class="post-time">১০ মিনিট আগে</span>
-                    </div>
-                </div>
-                
-                <div class="post-content">
-                    <p>Flashgram-এর নতুন ডিজাইন কেমন লাগছে আপনাদের? 🚀🔥</p>
-                    <img src="https://via.placeholder.com/400x300" class="post-image" alt="Post Content">
-                </div>
-
-                <div class="post-footer">
-                    <button class="like-btn">❤️ <span class="like-count">২৫</span></button>
-                    <button class="comment-btn">💬 কমেন্ট</button>
-                    <button class="share-btn">🚀 শেয়ার</button>
-                </div>
-            </article>
-
-        </section>
-
-    </main>
-
-    <!-- ৫. নতুন ইনস্টাগ্রাম স্টাইল বটম নেভিগেশন বার -->
-    <nav class="bottom-nav">
-        <button class="nav-item active" aria-label="Home">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.099l-10 8.66v11.241h7v-7h6v7h7v-11.241l-10-8.66z"/></svg>
-        </button>
-        <button class="nav-item" aria-label="Reels">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="m10 15 5-3-5-3v6z"/></svg>
-        </button>
-        <button class="nav-item" aria-label="Message">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-        </button>
-        <button class="nav-item" aria-label="Search">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        </button>
-        <button class="nav-item" aria-label="Profile">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        </button>
-    </nav>
-
-    <!-- JavaScript ফাইলগুলোর লিংক -->
-    <script src="js/app.js"></script>
-    <script src="js/navigation.js"></script>
-</body>
-</html>
