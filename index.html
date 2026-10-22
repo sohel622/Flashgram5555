@@ -3,162 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flashgram - Test Page</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: #0f172a;
-            color: #f8fafc;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .card {
-            background: rgba(30, 41, 59, 0.7);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 24px;
-            padding: 40px 30px;
-            width: 100%;
-            max-width: 400px;
-            text-align: center;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-
-        .logo-container {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, #ec4899, #8b5cf6, #3b82f6);
-            border-radius: 20px;
-            margin-bottom: 16px;
-            box-shadow: 0 8px 16px rgba(139, 92, 246, 0.3);
-        }
-
-        .logo-icon {
-            width: 36px;
-            height: 36px;
-            fill: white;
-        }
-
-        .app-title {
-            font-size: 28px;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            background: linear-gradient(to right, #f472b6, #c084fc, #60a5fa);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 24px;
-        }
-
-        .typing-box {
-            background: #090d16;
-            border-radius: 16px;
-            padding: 20px;
-            margin-bottom: 24px;
-            border: 1px solid #334155;
-            min-height: 70px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .typing-text {
-            font-size: 24px;
-            font-weight: 600;
-            color: #38bdf8;
-            display: inline-block;
-        }
-
-        .cursor {
-            display: inline-block;
-            width: 3px;
-            height: 24px;
-            background-color: #38bdf8;
-            margin-left: 4px;
-            animation: blink 0.8s infinite;
-            vertical-align: middle;
-        }
-
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
-
-        .btn {
-            background: linear-gradient(135deg, #6366f1, #a855f7);
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 12px;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .btn:active {
-            transform: scale(0.96);
-        }
-    </style>
+    <title>Flashgram</title>
+    <!-- CSS লিঙ্ক -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <div class="card">
-        <!-- Flashgram Logo -->
-        <div class="logo-container">
-            <svg class="logo-icon" viewBox="0 0 24 24">
-                <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
-            </svg>
+    <!-- ১. টপ হেডার / নেভিগেশন বার -->
+    <header class="top-nav">
+        <h1 class="logo">Flashgram</h1>
+        <div class="nav-icons">
+            <button class="icon-btn" aria-label="Notifications">🔔</button>
+            <button class="icon-btn" aria-label="Messages">💬</button>
         </div>
+    </header>
 
-        <!-- App Name -->
-        <h1 class="app-title">Flashgram</h1>
+    <!-- মেইন কনটেন্ট এরিয়া -->
+    <main class="main-container">
 
-        <!-- Typing Animation Box -->
-        <div class="typing-box">
-            <span class="typing-text" id="typed"></span><span class="cursor"></span>
-        </div>
+        <!-- ২. স্টোরি সেকশন (Stories) -->
+        <section class="stories-container">
+            <div class="story my-story">
+                <div class="add-story-btn">+</div>
+                <span>আপনার স্টোরি</span>
+            </div>
+            <div class="story">
+                <img src="https://via.placeholder.com/60" alt="User">
+                <span>User 1</span>
+            </div>
+            <div class="story">
+                <img src="https://via.placeholder.com/60" alt="User">
+                <span>User 2</span>
+            </div>
+        </section>
 
-        <!-- Replay Button -->
-        <button class="btn" onclick="startTyping()">Replay Animation</button>
-    </div>
+        <!-- ৩. পোস্ট তৈরি করার সেকশন (Create Post) -->
+        <section class="create-post-card">
+            <div class="post-input-box">
+                <img src="https://via.placeholder.com/40" class="avatar" alt="Profile">
+                <input type="text" placeholder="আজকে আপনার মনে কী চলছে, Flashgram-এ শেয়ার করুন...">
+            </div>
+            <div class="post-actions">
+                <button class="action-btn">📷 ফটো / ভিডিও</button>
+                <button class="action-btn post-submit">পোস্ট করুন</button>
+            </div>
+        </section>
 
-    <script>
-        const textToType = "Hello 👋";
-        const typedElement = document.getElementById("typed");
-        let index = 0;
-        let timer;
+        <!-- ৪. সোশ্যাল মিডিয়া ফিড / পোস্টগুলো (Feed Section) -->
+        <section class="feed-container">
 
-        function startTyping() {
-            clearTimeout(timer);
-            typedElement.textContent = "";
-            index = 0;
-            typeNextChar();
-        }
+            <!-- একটা স্যাম্পল পোস্ট -->
+            <article class="post-card">
+                <div class="post-header">
+                    <img src="https://via.placeholder.com/40" class="avatar" alt="User">
+                    <div class="user-info">
+                        <h3>Sohail Mandal</h3>
+                        <span class="post-time">১০ মিনিট আগে</span>
+                    </div>
+                </div>
+                
+                <div class="post-content">
+                    <p>Flashgram-এর নতুন ডিজাইন কেমন লাগছে আপনাদের? 🚀🔥</p>
+                    <img src="https://via.placeholder.com/400x300" class="post-image" alt="Post Content">
+                </div>
 
-        function typeNextChar() {
-            if (index < textToType.length) {
-                typedElement.textContent += textToType.charAt(index);
-                index++;
-                timer = setTimeout(typeNextChar, 150);
-            }
-        }
+                <div class="post-footer">
+                    <button class="like-btn">❤️ <span class="like-count">২৫</span></button>
+                    <button class="comment-btn">💬 কমেন্ট</button>
+                    <button class="share-btn">🚀 শেয়ার</button>
+                </div>
+            </article>
 
-        // Start animation on load
-        window.onload = startTyping;
-    </script>
+        </section>
 
+    </main>
+
+    <!-- ৫. বটম নেভিগেশন বার (মোবাইল অ্যাপ লুকের জন্য) -->
+    <nav class="bottom-nav">
+        <button class="nav-item active">🏠<span>হোম</span></button>
+        <button class="nav-item">🔍<span>সার্চ</span></button>
+        <button class="nav-item">➕<span>প্লাস</span></button>
+        <button class="nav-item">🎬<span>রিলস</span></button>
+        <button class="nav-item">👤<span>প্রোফাইল</span></button>
+    </nav>
+
+    <!-- JavaScript লিঙ্ক -->
+    <script src="js/app.js"></script>
 </body>
 </html>
