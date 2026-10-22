@@ -24,22 +24,15 @@ jobs:
           mkdir www
           cp -r index.html css home js assets www/ 2>/dev/null || cp -r index.html css home js www/
 
-      - name: Install Dependencies
+      - name: Install Dependencies & Capacitor
         run: |
           npm init -y
-          npm install @capacitor/core @capacitor/cli @capacitor/android
+          npm install @capacitor/core@latest @capacitor/cli@latest @capacitor/android@latest
 
-      - name: Initialize Capacitor App
+      - name: Initialize App & Add Android
         run: |
           npx cap init Flashgram com.sohail.flashgram --web-dir www
-
-      - name: Add Android Platform
-        run: |
-          npx cap add android
-
-      - name: Sync Capacitor Files
-        run: |
-          npx cap sync android
+          npx cap add android --force
 
       - name: Setup Java JDK
         uses: actions/setup-java@v4
@@ -47,11 +40,14 @@ jobs:
           distribution: 'zulu'
           java-version: '17'
 
+      - name: Sync Capacitor Files
+        run: npx cap sync android
+
       - name: Build Android APK
         run: |
           cd android
           chmod +x gradlew
-          ./gradlew clean assembleDebug --refresh-dependencies
+          ./gradlew assembleDebug --no-daemon
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
